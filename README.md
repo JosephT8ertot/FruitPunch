@@ -25,8 +25,28 @@ FruitPunch tracks player statistics for users, groups, and across the world to g
  * FuitPunch - Runs at start of App
  * Interface - Controls the user interface classes, pages, etc.
  * interface.kv - Kivy file for the user interface and interface pages
+ * Player - Controls the layer and their stats
  * User - Controls the user and their stats
- * Group - Controls the stats, tournaments, leagues, and users for a group
+ * Group - Controls the stats, tournaments, leagues, and users for a group. Can have one or more admins.
  * Game - Contains the classes for each game
  * Tournament - Controls a tournament and stats for x users
  * League - Controls a league and stats for x users
+### FruitPunch
+ * Simply runs the start of the Interface. Can run test cases during development.
+### Interface
+ * Home, Login, Create, Dashboard, Game(all types), Load Group, Create Group, Group, Admin Group, Statistics(all types), Load Tournament, Tournament Create, Tournament, Load League, Create League, League, Screen Manager, FruitPunch are all classes
+### interface.kv
+ * Has a screen outline for all classes above using FruitPunch as App and ScreenManager as Manager
+### Player
+ * name, stats
+### User
+ * name, stats, password, adminGroups, groups
+### Group
+ * name, stats, users, players, tournaments, leagues
+### Game
+ * Beer Pong, Snappa, Rage Cage, Kings / Other Card Games, Flip Cup, etc. are classes
+ * Each class has own statistics
+### Tournament
+ * name, stats, users, players
+### League
+ * name, stats, users, players
