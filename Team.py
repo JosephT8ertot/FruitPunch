@@ -18,12 +18,15 @@ class Team:
         self.members = members
         self.beerPongStats = self.loadBPStats()
         self.snappaStats = self.loadSnappaStats()
+
     # loads the beer pong stats
     def loadBPStats(self):
         pass
+
     # loads the snappa stats
     def loadSnappaStats(self):
         pass
+
     # saves all stats
     def saveStats(self):
         pass
