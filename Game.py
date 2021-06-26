@@ -16,12 +16,12 @@ class Game:
         self.teams = teams
 
 # SnappaGame class
-class SnappaGame:
+class SnappaGame(Game):
     def __init__(self, name, ID, teams=(None, None)):
-        super().__init__(self, name, ID, teams)
+        super().__init__(name, ID, teams)
         self.stats = {'throws':0,'hits':0,'sinks':0,'scores':0,'catches':0,'drops':0,'wins':0,'losses':0}
 
-class BeerPongGame:
+class BeerPongGame(Game):
     def __init__(self, name, ID, teams=(None, None)):
-        super().__init__(self, name, ID, teams)
+        super().__init__(name, ID, teams)
         self.stats = {'shots':0,'sinks':0,'wins':0,'losses':0}

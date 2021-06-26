@@ -5,9 +5,9 @@ Last Edit: 6/25/2021
 """
 
 # imports
-from random import random, choice
+from random import shuffle
 from Game import SnappaGame, BeerPongGame
-import numpy as np
+from Team import Team
 
 # League class
 class League:
@@ -40,8 +40,18 @@ class League:
         return []
 
     # creates games for league using self.teams
-    def createGames(self):
-        pass # FIXME
+    def createGames(self):  # FIXME only works with even num of teams
+        randTeams = self.teams
+        shuffle(randTeams)
+        games = []
+        for i in range(1, self.gamesPerTeam):
+            for j in range(0, len(self.teams) // 2, i):
+                teams = (randTeams[2*j], randTeams[2*j+i])
+                gameName = "%s vs. %s" % (teams[0].name, teams[1].name)
+                gameID = None  # FIXME add ID getter
+                game = self.gameClass(gameName, gameID, teams=teams)
+                games.append(game)
+        self.games = games
 
 # Snappa League
 class SnappaLeague(League):
@@ -70,8 +80,3 @@ class BeerPongLeague(League):
     # saves the beer pong league stats
     def saveStats(self):
         pass
-
-ss = SnappaLeague("HI",123,3)
-ss.addTeams(["hi","peo","Snack","tel","IO","robbie","PP","TEL"])
-ss.createGames()
-ss.games
