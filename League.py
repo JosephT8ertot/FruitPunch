@@ -5,8 +5,9 @@ Last Edit: 6/25/2021
 """
 
 # imports
-from random import random
+from random import random, choice
 from Game import SnappaGame, BeerPongGame
+import numpy as np
 
 # League class
 class League:
@@ -20,7 +21,7 @@ class League:
 
     # loads the teams
     def loadTeams(self):
-        pass
+        return []
 
     # adds teams
     def addTeams(self, teams):
@@ -36,16 +37,16 @@ class League:
 
     # loads the Games for league
     def loadGames(self):
-        pass
+        return []
 
     # creates games for league using self.teams
-    def createTeams(self):
-        pass  # FIXME add unique matches
+    def createGames(self):
+        pass # FIXME
 
 # Snappa League
 class SnappaLeague(League):
     def __init__(self, name, ID, gamesPerTeam):
-        super().__init__(self, name, ID, gamesPerTeam, SnappaGame)
+        super().__init__(name, ID, gamesPerTeam, SnappaGame)
         self.stats = self.loadStats()
 
     # loads all snappa league stats
@@ -59,7 +60,7 @@ class SnappaLeague(League):
 # BeerPong League class
 class BeerPongLeague(League):
     def __init__(self, name, ID, gamesPerTeam):
-        super().__init__(self, name, ID, BeerPongGame)
+        super().__init__(name, ID, gamesPerTeam, BeerPongGame)
         self.stats = self.loadStats()
 
     # loads the beerPong league stats
@@ -69,3 +70,8 @@ class BeerPongLeague(League):
     # saves the beer pong league stats
     def saveStats(self):
         pass
+
+ss = SnappaLeague("HI",123,3)
+ss.addTeams(["hi","peo","Snack","tel","IO","robbie","PP","TEL"])
+ss.createGames()
+ss.games
