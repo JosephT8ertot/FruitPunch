@@ -1,14 +1,309 @@
 #:kivy 1.0.9
 WindowManager:
     Home:
+    Login:
+    CreateUser:
+    Dashboard:
+    Group:
+    AdminGroup:
+    BeerPong:
+    Snappa:
+    BeerPongTournament:
+    SnappaTournament:
+    BeerPongLeague:
+    SnappaLeague:
+    Team:
 
 <Home>:
+    name: 'home'
     canvas:
         Color:
             rgba: rgba("6E6E6E")
         Rectangle:
             size: root.size
     Button:
-        text: 'Press Me'
-        size_hint: 0.1, 0.1
-        pos: root.width / 2, 10
+        text: 'Login'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, 10
+        on_press: root.manager.current = 'login'
+    Button:
+        text: 'Create User'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, root.height * 0.1 + 20
+        on_press: root.manager.current = 'create_user'
+
+<Login>:
+    name: 'login'
+    canvas:
+        Color:
+            rgba: rgba("6E6E6E")
+        Rectangle:
+            size: root.size
+    Button:
+        text: 'Dashboard'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, 10
+        on_press: root.manager.current = 'dashboard'
+    Button:
+        text: 'Back'
+        size_hint: 0.15, 0.1
+        pos: 10, root.height * 0.9 - 10
+        on_press: root.manager.current = 'home'
+
+<CreateUser>:
+    name: 'create_user'
+    canvas:
+        Color:
+            rgba: rgba("6E6E6E")
+        Rectangle:
+            size: root.size
+    Button:
+        text: 'Dashboard'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, 10
+        on_press: root.manager.current = 'dashboard'
+    Button:
+        text: 'Back'
+        size_hint: 0.15, 0.1
+        pos: 10, root.height * 0.9 - 10
+        on_press: root.manager.current = 'home'
+
+<Dashboard>:
+    name: 'dashboard'
+    canvas:
+        Color:
+            rgba: rgba("6E6E6E")
+        Rectangle:
+            size: root.size
+    Button:
+        text: 'Group'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, 10
+        on_press: root.manager.current = 'group'
+    Button:
+        text: 'Admin Group'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, root.height * 0.1 + 20
+        on_press: root.manager.current = 'admin_group'
+    Button:
+        text: 'Back'
+        size_hint: 0.15, 0.1
+        pos: 10, root.height * 0.9 - 10
+        on_press: root.manager.current = 'home'
+
+<Group>:
+    name: 'group'
+    canvas:
+        Color:
+            rgba: rgba("6E6E6E")
+        Rectangle:
+            size: root.size
+    Button:
+        text: 'Beer Pong'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, 10
+        on_press: root.manager.current = 'beer_pong'
+    Button:
+        text: 'Snappa'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, root.height * 0.1 + 20
+        on_press: root.manager.current = 'snappa'
+    Button:
+        text: 'Beer Pong Tournament'
+        size_hint: 0.2, 0.1
+        pos: root.width * 0.4, root.height * 0.2 + 30
+        on_press: root.manager.current = 'beer_pong_tournament'
+    Button:
+        text: 'Snappa Tournament'
+        size_hint: 0.2, 0.1
+        pos: root.width * 0.4, root.height * 0.3 + 40
+        on_press: root.manager.current = 'snappa_tournament'
+    Button:
+        text: 'Beer Pong League'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, root.height * 0.4 + 50
+        on_press: root.manager.current = 'beer_pong_league'
+    Button:
+        text: 'Snappa League'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, root.height * 0.5 + 60
+        on_press: root.manager.current = 'snappa_league'
+    Button:
+        text: 'Back'
+        size_hint: 0.15, 0.1
+        pos: 10, root.height * 0.9 - 10
+        on_press: root.manager.current = 'dashboard'
+
+<AdminGroup>:
+    name: 'admin_group'
+    canvas:
+        Color:
+            rgba: rgba("6E6E6E")
+        Rectangle:
+            size: root.size
+    Button:
+        text: 'Beer Pong'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, 10
+        on_press: root.manager.current = 'beer_pong'
+    Button:
+        text: 'Snappa'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, root.height * 0.1 + 20
+        on_press: root.manager.current = 'snappa'
+    Button:
+        text: 'Beer Pong Tournament'
+        size_hint: 0.2, 0.1
+        pos: root.width * 0.4, root.height * 0.2 + 30
+        on_press: root.manager.current = 'beer_pong_tournament'
+    Button:
+        text: 'Snappa Tournament'
+        size_hint: 0.2, 0.1
+        pos: root.width * 0.4, root.height * 0.3 + 40
+        on_press: root.manager.current = 'snappa_tournament'
+    Button:
+        text: 'Beer Pong League'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, root.height * 0.4 + 50
+        on_press: root.manager.current = 'beer_pong_league'
+    Button:
+        text: 'Snappa League'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, root.height * 0.5 + 60
+        on_press: root.manager.current = 'snappa_league'
+    Button:
+        text: 'Back'
+        size_hint: 0.15, 0.1
+        pos: 10, root.height * 0.9 - 10
+        on_press: root.manager.current = 'dashboard'
+
+<BeerPong>:
+    name: 'beer_pong'
+    canvas:
+        Color:
+            rgba: rgba("6E6E6E")
+        Rectangle:
+            size: root.size
+    Button:
+        text: 'Back'
+        size_hint: 0.15, 0.1
+        pos: 10, root.height * 0.9 - 10
+        on_press: root.manager.current = 'dashboard'
+
+<Snappa>:
+    name: 'snappa'
+    canvas:
+        Color:
+            rgba: rgba("6E6E6E")
+        Rectangle:
+            size: root.size
+    Button:
+        text: 'Back'
+        size_hint: 0.15, 0.1
+        pos: 10, root.height * 0.9 - 10
+        on_press: root.manager.current = 'dashboard'
+
+<BeerPongTournament>:
+    name: 'beer_pong_tournament'
+    canvas:
+        Color:
+            rgba: rgba("6E6E6E")
+        Rectangle:
+            size: root.size
+    Button:
+        text: 'Beer Pong'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, 10
+        on_press: root.manager.current = 'beer_pong'
+    Button:
+        text: 'Team'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, root.height * 0.1 + 20
+        on_press: root.manager.current = 'team'
+    Button:
+        text: 'Back'
+        size_hint: 0.15, 0.1
+        pos: 10, root.height * 0.9 - 10
+        on_press: root.manager.current = 'dashboard'
+
+<SnappaTournament>:
+    name: 'snappa_tournament'
+    canvas:
+        Color:
+            rgba: rgba("6E6E6E")
+        Rectangle:
+            size: root.size
+    Button:
+        text: 'Snappa'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, 10
+        on_press: root.manager.current = 'snappa'
+    Button:
+        text: 'Team'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, root.height * 0.1 + 20
+        on_press: root.manager.current = 'team'
+    Button:
+        text: 'Back'
+        size_hint: 0.15, 0.1
+        pos: 10, root.height * 0.9 - 10
+        on_press: root.manager.current = 'dashboard'
+
+<BeerPongLeague>:
+    name: 'beer_pong_league'
+    canvas:
+        Color:
+            rgba: rgba("6E6E6E")
+        Rectangle:
+            size: root.size
+    Button:
+        text: 'Beer Pong'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, 10
+        on_press: root.manager.current = 'beer_pong'
+    Button:
+        text: 'Team'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, root.height * 0.1 + 20
+        on_press: root.manager.current = 'team'
+    Button:
+        text: 'Back'
+        size_hint: 0.15, 0.1
+        pos: 10, root.height * 0.9 - 10
+        on_press: root.manager.current = 'dashboard'
+
+<SnappaLeague>:
+    name: 'snappa_league'
+    canvas:
+        Color:
+            rgba: rgba("6E6E6E")
+        Rectangle:
+            size: root.size
+    Button:
+        text: 'Snappa'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, 10
+        on_press: root.manager.current = 'snappa'
+    Button:
+        text: 'Team'
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, root.height * 0.1 + 20
+        on_press: root.manager.current = 'team'
+    Button:
+        text: 'Back'
+        size_hint: 0.15, 0.1
+        pos: 10, root.height * 0.9 - 10
+        on_press: root.manager.current = 'dashboard'
+
+<Team>:
+    name: 'team'
+    canvas:
+        Color:
+            rgba: rgba("6E6E6E")
+        Rectangle:
+            size: root.size
+    Button:
+        text: 'Back'
+        size_hint: 0.15, 0.1
+        pos: 10, root.height * 0.9 - 10
+        on_press: root.manager.current = 'dashboard'
