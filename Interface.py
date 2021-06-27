@@ -1,6 +1,6 @@
 """
 Creator: Joseph A Tate
-Last Edit: 6/24/2021
+Last Edit: 6/26/2021
     Interface class contains many classes that helps provides the users with a fluid experience. It is focused around
 being easy on the eye, functionality, and drawing the users attention. It makes use of user statistics to make the user
 curious.
@@ -9,6 +9,7 @@ curious.
 
 # imports
 from kivy.app import App
+from kivy.properties import StringProperty
 from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager, Screen
 
@@ -30,39 +31,39 @@ class Dashboard(Screen):
 
 # Group screen
 class Group(Screen):
-    pass
+    prev = StringProperty('dashboard')
 
 # AdminGroup screen
 class AdminGroup(Screen):
-    pass
+    prev = StringProperty('dashboard')
 
 # BeerPong screen
 class BeerPong(Screen):
-    pass
+    prev = StringProperty('dashboard')
 
 # Snappa screen
 class Snappa(Screen):
-    pass
+    prev = StringProperty('dashboard')
 
 # BPTournament screen
 class BeerPongTournament(Screen):
-    pass
+    prev = StringProperty('dashboard')
 
 # SnappaTournament screen
 class SnappaTournament(Screen):
-    pass
+    prev = StringProperty('dashboard')
 
 # BPLeague screen
 class BeerPongLeague(Screen):
-    pass
+    prev = StringProperty('dashboard')
 
 # SnappaLeague screen
 class SnappaLeague(Screen):
-    pass
+    prev = StringProperty('dashboard')
 
 # Team screen
 class Team(Screen):
-    pass
+    prev = StringProperty('dashboard')
 
 # WindowManager Class
 class WindowManager(ScreenManager):
@@ -72,6 +73,7 @@ class WindowManager(ScreenManager):
 class Interface(App):
     def build(self):
         pass
+
 
 # Kivy environment variables
 Window.minimum_height = 600

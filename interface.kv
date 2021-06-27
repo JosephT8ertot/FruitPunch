@@ -93,6 +93,7 @@ WindowManager:
 
 <Group>:
     name: 'group'
+    prev: root.prev
     canvas:
         Color:
             rgba: rgba("6E6E6E")
@@ -132,10 +133,11 @@ WindowManager:
         text: 'Back'
         size_hint: 0.15, 0.1
         pos: 10, root.height * 0.9 - 10
-        on_press: root.manager.current = 'dashboard'
+        on_press: root.manager.current = root.prev
 
 <AdminGroup>:
     name: 'admin_group'
+    prev: root.prev
     canvas:
         Color:
             rgba: rgba("6E6E6E")
@@ -175,10 +177,11 @@ WindowManager:
         text: 'Back'
         size_hint: 0.15, 0.1
         pos: 10, root.height * 0.9 - 10
-        on_press: root.manager.current = 'dashboard'
+        on_press: root.manager.current = root.prev
 
 <BeerPong>:
     name: 'beer_pong'
+    prev: root.prev
     canvas:
         Color:
             rgba: rgba("6E6E6E")
@@ -188,10 +191,11 @@ WindowManager:
         text: 'Back'
         size_hint: 0.15, 0.1
         pos: 10, root.height * 0.9 - 10
-        on_press: root.manager.current = 'dashboard'
+        on_press: root.manager.current = root.prev
 
 <Snappa>:
     name: 'snappa'
+    prev: root.prev
     canvas:
         Color:
             rgba: rgba("6E6E6E")
@@ -201,10 +205,11 @@ WindowManager:
         text: 'Back'
         size_hint: 0.15, 0.1
         pos: 10, root.height * 0.9 - 10
-        on_press: root.manager.current = 'dashboard'
+        on_press: root.manager.current = root.prev
 
 <BeerPongTournament>:
     name: 'beer_pong_tournament'
+    prev: root.prev
     canvas:
         Color:
             rgba: rgba("6E6E6E")
@@ -224,10 +229,11 @@ WindowManager:
         text: 'Back'
         size_hint: 0.15, 0.1
         pos: 10, root.height * 0.9 - 10
-        on_press: root.manager.current = 'dashboard'
+        on_press: root.manager.current = root.prev
 
 <SnappaTournament>:
     name: 'snappa_tournament'
+    prev: root.prev
     canvas:
         Color:
             rgba: rgba("6E6E6E")
@@ -247,10 +253,11 @@ WindowManager:
         text: 'Back'
         size_hint: 0.15, 0.1
         pos: 10, root.height * 0.9 - 10
-        on_press: root.manager.current = 'dashboard'
+        on_press: root.manager.current = root.prev
 
 <BeerPongLeague>:
     name: 'beer_pong_league'
+    prev: root.prev
     canvas:
         Color:
             rgba: rgba("6E6E6E")
@@ -270,10 +277,11 @@ WindowManager:
         text: 'Back'
         size_hint: 0.15, 0.1
         pos: 10, root.height * 0.9 - 10
-        on_press: root.manager.current = 'dashboard'
+        on_press: root.manager.current = root.prev
 
 <SnappaLeague>:
     name: 'snappa_league'
+    prev: root.prev
     canvas:
         Color:
             rgba: rgba("6E6E6E")
@@ -293,10 +301,11 @@ WindowManager:
         text: 'Back'
         size_hint: 0.15, 0.1
         pos: 10, root.height * 0.9 - 10
-        on_press: root.manager.current = 'dashboard'
+        on_press: root.manager.current = root.prev
 
 <Team>:
     name: 'team'
+    prev: root.prev
     canvas:
         Color:
             rgba: rgba("6E6E6E")
@@ -306,4 +315,4 @@ WindowManager:
         text: 'Back'
         size_hint: 0.15, 0.1
         pos: 10, root.height * 0.9 - 10
-        on_press: root.manager.current = 'dashboard'
+        on_press: root.manager.current = root.prev
