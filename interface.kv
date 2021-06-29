@@ -1,22 +1,8 @@
 #:kivy 1.0.9
-WindowManager:
-    Home:
-    Login:
-    CreateUser:
-    Dashboard:
-    Group:
-    AdminGroup:
-    BeerPong:
-    Snappa:
-    BeerPongTournament:
-    SnappaTournament:
-    BeerPongLeague:
-    SnappaLeague:
-    Team:
 
 <Home>:
     name: 'home'
-    canvas:
+    canvas.before:
         Color:
             rgba: rgba("6E6E6E")
         Rectangle:
@@ -39,11 +25,26 @@ WindowManager:
             rgba: rgba("6E6E6E")
         Rectangle:
             size: root.size
+    TextInput:
+        id: username
+        multiline: 0
+        hint_text: 'Enter Username'
+        size_hint: 0.15, 0.05
+        pos: root.width * 0.425, root.height * 0.95 - 10
+    TextInput:
+        id: password
+        multiline: 0
+        hint_text: 'Enter Password'
+        size_hint: 0.15, 0.05
+        pos: root.width * 0.425, root.height * 0.9 - 20
     Button:
         text: 'Dashboard'
+        id: dashboard
         size_hint: 0.15, 0.1
         pos: root.width * 0.425, 10
-        on_press: root.manager.current = 'dashboard'
+        on_press:
+            app.getUser(root.ids.username.text, root.ids.password.text)
+            root.manager.current = 'dashboard'
     Button:
         text: 'Back'
         size_hint: 0.15, 0.1
@@ -57,11 +58,25 @@ WindowManager:
             rgba: rgba("6E6E6E")
         Rectangle:
             size: root.size
+    TextInput:
+        id: username
+        multiline: 0
+        hint_text: 'Enter Username'
+        size_hint: 0.15, 0.05
+        pos: root.width * 0.425, root.height * 0.95 - 10
+    TextInput:
+        id: password
+        multiline: 0
+        hint_text: 'Enter Password'
+        size_hint: 0.15, 0.05
+        pos: root.width * 0.425, root.height * 0.9 - 20
     Button:
         text: 'Dashboard'
         size_hint: 0.15, 0.1
         pos: root.width * 0.425, 10
-        on_press: root.manager.current = 'dashboard'
+        on_press:
+            app.createUser(root.ids.username.text, root.ids.password.text)
+            root.manager.current = 'dashboard'
     Button:
         text: 'Back'
         size_hint: 0.15, 0.1
@@ -75,6 +90,10 @@ WindowManager:
             rgba: rgba("6E6E6E")
         Rectangle:
             size: root.size
+    Label:
+        text: root.text
+        size_hint: 0.15, 0.1
+        pos: root.width * 0.425, root.height * 0.9 - 10
     Button:
         text: 'Group'
         size_hint: 0.15, 0.1

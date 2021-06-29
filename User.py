@@ -12,9 +12,10 @@ from Player import Player
 # User class
 class User(Player):
     def __init__(self, name, ID):
-        super().__init__(self, name, ID)
+        super().__init__(name, ID)
         self.groups = self.groupsLoad()
         self.adminGroups = self.adminGroupsLoad()
+
     # loads all the groups a user is a part of but does not have access admin privileges to.
     def groupsLoad(self):
         return []
