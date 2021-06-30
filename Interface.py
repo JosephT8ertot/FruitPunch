@@ -11,6 +11,7 @@ curious.
 from kivy.app import App
 from kivy.properties import StringProperty
 from kivy.uix.textinput import TextInput
+from kivy.uix.checkbox import CheckBox
 from User import User
 from kivy.uix.screenmanager import ScreenManager, Screen
 
@@ -23,25 +24,11 @@ class Home(Screen):
 class Login(Screen):
     def __init__(self, **kwargs):
         super(Login, self).__init__(**kwargs)
-        self.username = self.ids.username
-        self.password = self.ids.password
-
-    # gets the user from the database
-    def getUser(self):  # FIXME finish
-        username = self.username.text
-        password = self.password.text
 
 # CreateUser Screen
 class CreateUser(Screen):
     def __init__(self, **kwargs):
         super(CreateUser, self).__init__(**kwargs)
-        self.username = self.ids.username
-        self.password = self.ids.password
-
-    # creates the user and adds them to the database
-    def createUser(self):  # FIXME finish
-        username = self.username.text
-        password = self.password.text
 
 # Dashboard screen
 class Dashboard(Screen):
@@ -129,13 +116,13 @@ class Interface(App):
         return self.sm
 
     # creates a user, adds them to database, and creates a dashboard for them
-    def createUser(self, username, password):
-        print(username," ", password)
+    def createUser(self, username, password, stay_logged):
+        print(username," ", password, " ", str(stay_logged))
         self.user = User(username, "add_ID")
         self.sm.add_widget(Dashboard(self.user, name='dashboard'))
 
     # grabs a user from the database, and creates a dashboard for them
-    def getUser(self, username, password):
-        print(username," ", password)
+    def getUser(self, username, password, stay_logged):
+        print(username," ", password, " ", str(stay_logged))
         self.user = User(username, "add_ID")
         self.sm.add_widget(Dashboard(self.user, name='dashboard'))
