@@ -10,6 +10,9 @@ from Game import SnappaGame, BeerPongGame
 from Team import Team
 
 # League class
+from User import User
+
+
 class League:
     def __init__(self, name, ID, gamesPerTeam, gameClass):
         self.name = name
@@ -40,17 +43,16 @@ class League:
         return []
 
     # creates games for league using self.teams
-    def createGames(self):  # FIXME only works with even num of teams
-        randTeams = self.teams
-        shuffle(randTeams)
+    def createGames(self):  # FIXME may have repeats, make better
         games = []
-        for i in range(1, self.gamesPerTeam):
-            for j in range(0, len(self.teams) // 2, i):
-                teams = (randTeams[2*j], randTeams[2*j+i])
-                gameName = "%s vs. %s" % (teams[0].name, teams[1].name)
-                gameID = None  # FIXME add ID getter
-                game = self.gameClass(gameName, gameID, teams=teams)
-                games.append(game)
+        randTeams = self.teams
+        for i in range(self.gamesPerTeam):
+            shuffle(randTeams)
+            for j in range(len(randTeams) // 2):
+                teams = [randTeams[i + j], randTeams[(i + j + len(self.teams) // 2) % len(randTeams)]]
+                gameName = ""
+                gameID = 123
+                games.append(self.gameClass(gameName, gameID, teams))
         self.games = games
 
 # Snappa League
