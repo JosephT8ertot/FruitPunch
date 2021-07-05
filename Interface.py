@@ -10,9 +10,7 @@ curious.
 # imports
 from kivy.app import App
 from kivy.properties import StringProperty
-from kivy.uix.textinput import TextInput
-from kivy.uix.checkbox import CheckBox
-from User import User
+from Member import User
 from kivy.uix.screenmanager import ScreenManager, Screen
 
 # Home screen

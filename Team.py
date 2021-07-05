@@ -7,8 +7,6 @@ game types.
 
 
 # imports
-from Player import Player
-from User import User
 
 # Team class (general team)
 class Team:

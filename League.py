@@ -7,20 +7,16 @@ Last Edit: 6/25/2021
 # imports
 from random import shuffle
 from Game import SnappaGame, BeerPongGame
-from Team import Team
 
 # League class
-from User import User
-
-
 class League:
-    def __init__(self, name, ID, gamesPerTeam, gameClass):
+    def __init__(self, name, ID, rounds, gameClass):
         self.name = name
         self.ID = ID
-        self.gamesPerTeam = gamesPerTeam
+        self.rounds = rounds
         self.gameClass = gameClass
-        self.teams = self.loadTeams()
-        self.games = self.loadGames()
+        self.teams = []
+        self.games = []
 
     # loads the teams
     def loadTeams(self):
@@ -46,7 +42,7 @@ class League:
     def createGames(self):  # FIXME may have repeats, make better
         games = []
         randTeams = self.teams
-        for i in range(self.gamesPerTeam):
+        for i in range(self.rounds):
             shuffle(randTeams)
             for j in range(len(randTeams) // 2):
                 teams = [randTeams[i + j], randTeams[(i + j + len(self.teams) // 2) % len(randTeams)]]

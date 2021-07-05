@@ -6,12 +6,7 @@ Last Edit: 6/25/2021
 
 
 # imports
-from Player import Player
-from User import User
-from Team import Team
-from Tournament import *
-from League import *
-from Game import *
+from Member import User
 
 # Group class
 class Group:
@@ -21,8 +16,8 @@ class Group:
         self.ID = ID
         self.admins = self.loadAdmins()
         self.members = self.loadMembers()
-        self.leagues = self.loadLeagues()
-        self.tournaments = self.loadTournaments()
+        self.leagues = []
+        self.tournaments = []
         self.beerPongStats = self.loadBPStats()
         self.snappaStats = self.loadSnappaStats()
 

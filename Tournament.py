@@ -16,8 +16,8 @@ class Tournament:
         self.name = name
         self.ID = ID
         self.gameClass = gameClass
-        self.teams = self.loadTeams()
-        self.games = self.loadGames()
+        self.teams = []
+        self.games = []
 
     # loads the Teams
     def loadTeams(self):
@@ -52,6 +52,10 @@ class Tournament:
                     games.append(self.GameType(gameName, gameID, teams[i]))
             return Exception('No teams available.')
         return Exception('Odd number of teams.')
+
+    # saves the games
+    def saveGames(self):
+        pass
 
 class SnappaTournament(Tournament):
     def __init__(self, name, ID):
