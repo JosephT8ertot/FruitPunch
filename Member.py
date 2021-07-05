@@ -10,8 +10,8 @@ from Database import db
 
 # Player class
 class Player:
-    def __init__(self, email):
-        self.email = email
+    def __init__(self, email_or_ID):
+        self.email_or_ID = email_or_ID
         self.name = None
         self.beerPong = None
         self.snappa = None
